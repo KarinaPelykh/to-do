@@ -1,11 +1,17 @@
-
-import './App.css'
+import { StatusFilter } from "./components/filter/StatusFilter";
+import { Form } from "./components/form/From";
+import { ItemList } from "./components/list/ItemList";
+import { TaskCounter } from "./components/TaskCounter";
 
 function App() {
-
   return (
-    <h1>Hello</h1>
-  )
+    <>
+      <StatusFilter />
+      <TaskCounter />
+      <Form />
+      <ItemList />
+    </>
+  );
 }
 
-export default App
+export default App;
