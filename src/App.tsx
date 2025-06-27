@@ -1,6 +1,6 @@
 import { StatusFilter } from "./components/filter/StatusFilter";
 import { Form } from "./components/form/From";
-import { ItemList } from "./components/list/ItemList";
+import { ListToDo } from "./components/list/components/ListToDo";
 import { TaskCounter } from "./components/TaskCounter";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <StatusFilter />
       <TaskCounter />
       <Form />
-      <ItemList />
+      <ListToDo />
     </>
   );
 }

@@ -1,25 +1,19 @@
-import { statusFilter } from "../../../redux/filter/constants";
-
-type Task = {
-  id: string;
-  text: string;
-  completed: boolean;
-};
+import { statusFilters } from "../../../redux/filter/constants";
+import type { Task } from "../../../redux/tasks/selectors";
 
 type GetFilteredTasksProps = {
   tasks: Task[];
+  statusFilter: string;
 };
-
-type StatusFilter = (typeof statusFilter)[keyof typeof statusFilter];
 
 export const getFilteredTasks = ({
   tasks,
-  filter,
-}: GetFilteredTasksProps & { filter: StatusFilter }) => {
-  switch (filter) {
-    case statusFilter.active:
+  statusFilter,
+}: GetFilteredTasksProps) => {
+  switch (statusFilter) {
+    case statusFilters.active:
       return tasks.filter((task) => !task.completed);
-    case statusFilter.completed:
+    case statusFilters.completed:
       return tasks.filter((task) => task.completed);
     default:
       return tasks;

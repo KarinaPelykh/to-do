@@ -1,10 +1,19 @@
 import type { FormEvent } from "react";
+
 import { Button } from "../ui/Button";
+import { addTodo } from "../../redux/tasks/action";
+import { useAppDispatch } from "../../hook/hook";
 
 export const Form = () => {
+  const dispatch = useAppDispatch();
+
   const handelSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
+
+    dispatch(
+      addTodo({ text: form.input.value, completed: false, id: Date.now() })
+    );
     form.reset();
   };
 
@@ -15,6 +24,7 @@ export const Form = () => {
     >
       <input
         type="text"
+        name="input"
         placeholder="Enter your text"
         className="w-full outline-0 text-xl"
       />
