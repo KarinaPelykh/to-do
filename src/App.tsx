@@ -1,4 +1,4 @@
-import { StatusFilter } from "./components/filter/StatusFilter";
+// import { StatusFilter } from "./components/filter/StatusFilter";
 import { Form } from "./components/form/From";
 import { ListToDo } from "./components/list/components/ListToDo";
 import { TaskCounter } from "./components/TaskCounter";
@@ -6,7 +6,7 @@ import { TaskCounter } from "./components/TaskCounter";
 function App() {
   return (
     <>
-      <StatusFilter />
+      {/* <StatusFilter /> */}
       <TaskCounter />
       <Form />
       <ListToDo />

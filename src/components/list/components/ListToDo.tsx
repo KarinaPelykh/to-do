@@ -17,7 +17,7 @@ export const ListToDo = () => {
   return (
     <ul>
       {filteredTask.map(({ id, text, completed }) => (
-        <ToDo key={id} text={text} completed={completed} />
+        <ToDo key={id} text={text} completed={completed} id={id} />
       ))}
     </ul>
   );

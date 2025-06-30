@@ -5,11 +5,18 @@ type ButtonProps = {
   type: "button" | "submit" | "reset";
   children?: ReactNode;
   selected?: boolean;
+  onClick?: () => void;
 };
 
-export const Button = ({ type, children, selected }: ButtonProps) => {
+export const Button = ({
+  type = "button",
+  children,
+  selected,
+  onClick,
+}: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       type={type}
       className={clsx(
         selected && "bg-black border-2 border-amber-200 text-white",

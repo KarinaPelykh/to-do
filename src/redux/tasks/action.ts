@@ -1,5 +1,4 @@
 import type { Task } from "./selectors";
-
 export const addTodo = ({ text, id, completed }: Task) => {
   return {
     type: "task/ADD_TODO",
@@ -11,24 +10,10 @@ export const addTodo = ({ text, id, completed }: Task) => {
   };
 };
 
-// const deleteTodo = {
-//   type: "task/DELETE_TODO",
-//   payload: {
-//     id: "",
-//   },
-// };
+export const deleteTodo = ({ taskID }: { taskID: number }) => {
+  return { type: "task/DELETE_TODO", payload: taskID };
+};
 
-// const toggleCompletedTodo = {
-//   type: "task/TOGGLE_TODO",
-//   payload: {
-//     id: "",
-//   },
-// };
-
-// const setStatusFilter = {
-//   type: "task/SET_STATUS_FILTER",
-//   payload: {
-//     statusFilter: "",
-//     id: "",
-//   },
-// };
+export const toggleCompletedTodo = ({ taskID }: { taskID: number }) => {
+  return { type: "task/TOGGLE_TODO", payload: taskID };
+};
